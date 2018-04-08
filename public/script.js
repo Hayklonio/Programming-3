@@ -109,13 +109,13 @@ function draw() {
 
     for (var i in virusArr) {
         if (infectAmount < 4) {
-        virusArr[i].eat();
+            virusArr[i].eat();
             infectAmount++;
         }
         else {
             virusArr[i].die();
             infectAmount = 0;
-    }
+        }
     }
     if (gishatichArr.length + xotakerArr.length <= grassArr.length / 8) {
         for (var i in virusArr) {
@@ -123,7 +123,7 @@ function draw() {
         }
     }
 
-    if ((grassArr.length < n * m / 1.5) || (xotakerArr.length<=5)) {
+    if ((grassArr.length < n * m / 1.5) || (xotakerArr.length <= 5)) {
         var fx = Math.round(Math.random() * (m - 1));
         var fy = Math.round(Math.random() * (n - 1));
         while (matrix[fy][fx] != 2) {
@@ -143,7 +143,7 @@ function draw() {
             farmAmount = 0;
         }
     }
-    if((gishatichArr.length<5)&&(xotakerArr.length>5)){
+    if ((gishatichArr.length < 5) && (xotakerArr.length > 5)) {
         var gx = Math.round(Math.random() * (m - 1));
         var gy = Math.round(Math.random() * (n - 1));
         while (matrix[gy][gx] != 2) {
@@ -151,9 +151,9 @@ function draw() {
             gy = Math.round(Math.random() * (n - 1));
         }
         gishatichArr.push(new Gishatich(gx, gy));
-    
-    for ( var i in gishatichArr){
-        gishatichArr[i].move();
+
+        for (var i in gishatichArr) {
+            gishatichArr[i].move();
+        }
     }
-}
 }
