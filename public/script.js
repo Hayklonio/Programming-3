@@ -28,7 +28,7 @@ var farmAmount = 0;
 var infectAmount = 0;
 function setup() {
     // noStroke();
-    frameRate(60);
+    frameRate(120);
     createCanvas(matrix[0].length * side, matrix.length * side);
     background('#acacac');
 
