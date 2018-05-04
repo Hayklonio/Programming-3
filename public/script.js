@@ -1,11 +1,12 @@
+var socket = io();
 var grassArr = [];
 var xotakerArr = [];
 var gishatichArr = [];
 var virusArr = [];
 var farmerArr = [];
 var matrix = [];
-var n = Math.round(Math.random() * 50 + 40);
-var m = Math.round(Math.random() * 50 + 40);
+var n = Math.round(Math.random() * 50 + 10);
+var m = Math.round(Math.random() * 50 + 10);
 for (var y = 0; y < n; y++) {
     matrix[y] = [];
     for (var x = 0; x < m; x++) {
@@ -27,14 +28,14 @@ var side = 800 / n;
 var farmAmount = 0;
 var infectAmount = 0;
 function setup() {
-    // noStroke();
-    frameRate(120);
+    noStroke();
+    frameRate(600);
     createCanvas(matrix[0].length * side, matrix.length * side);
     background('#acacac');
 
 }
-function draw() {
-noStroke();
+setInterval(function draw() {
+    noStroke();
     for (var y = 0; y < matrix.length; y++) {
         for (var x = 0; x < matrix[y].length; x++) {
 
@@ -156,4 +157,4 @@ noStroke();
             gishatichArr[i].move();
         }
     }
-}
+}, 1000);
