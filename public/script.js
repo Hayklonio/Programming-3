@@ -1,4 +1,4 @@
-var socket = io();
+//var socket = io();
 var grassArr = [];
 var xotakerArr = [];
 var gishatichArr = [];
@@ -18,7 +18,9 @@ for (var y = 0; y < n; y++) {
             xotakerArr.push(new Xotaker(x, y))
         }
         else if (matrix[y][x] == 3) {
-            gishatichArr.push(new Gishatich(x, y))
+            var r = (Math.round(Math.random()))/2;
+                matrix[y][x]+=r;
+            gishatichArr.push(new Gishatich(x, y, r))
         }
     }
 }
@@ -29,7 +31,7 @@ var farmAmount = 0;
 var infectAmount = 0;
 function setup() {
     noStroke();
-    frameRate(600);
+    frameRate(60);
     createCanvas(matrix[0].length * side, matrix.length * side);
     background('#acacac');
 
@@ -52,6 +54,10 @@ setInterval(function draw() {
                 rect(x * side, y * side, side, side);
             }
             else if (matrix[y][x] == 3) {
+                fill("brown");
+                rect(x * side, y * side, side, side);
+            }
+            else if (matrix[y][x] == 3,5) {
                 fill("orange");
                 rect(x * side, y * side, side, side);
             }
@@ -157,4 +163,4 @@ setInterval(function draw() {
             gishatichArr[i].move();
         }
     }
-}, 1000);
+}, 200);

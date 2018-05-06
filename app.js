@@ -10,7 +10,6 @@ app.listen(3000, function () {
     console.log("Example is running on port 3000");
 });
 
-
 setInterval(function draw() {
     background("#acacac");
     for (var i in global.grassArr) {
